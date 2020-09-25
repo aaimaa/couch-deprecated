@@ -15,8 +15,7 @@ import click
 
 branches_to_update = {
 	'develop': [],
-	'version-11-hotfix': [],
-	'version-12-hotfix': [],
+	'version-13-beta': [],
 }
 
 releasable_branches = ['master']
