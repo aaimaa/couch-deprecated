@@ -214,8 +214,8 @@ def install_bench(args):
 	if args.production:
 		extra_vars.update(max_worker_connections=multiprocessing.cpu_count() * 1024)
 
-	frappe_branch = 'version-12'
-	erpnext_branch = 'version-12'
+	frappe_branch = 'version-13-beta'
+	erpnext_branch = 'version-13-beta'
 
 	if args.version:
 		if args.version <= 10:
@@ -247,7 +247,7 @@ def install_bench(args):
 def clone_bench_repo(args):
 	'''Clones the bench repository in the user folder'''
 	branch = args.bench_branch or 'master'
-	repo_url = args.repo_url or 'https://github.com/frappe/bench'
+	repo_url = args.repo_url or 'https://github.com/aaimaa/couch'
 
 	if os.path.exists(tmp_bench_repo):
 		return 0
@@ -379,9 +379,9 @@ def parse_commandline_args():
 	parser.add_argument('--user', dest='user', help='Install frappe-bench for this user')
 	parser.add_argument('--bench-branch', dest='bench_branch', help='Clone a particular branch of bench repository')
 	parser.add_argument('--repo-url', dest='repo_url', help='Clone bench from the given url')
-	parser.add_argument('--frappe-repo-url', dest='frappe_repo_url', action='store', default='https://github.com/frappe/frappe', help='Clone frappe from the given url')
+	parser.add_argument('--frappe-repo-url', dest='frappe_repo_url', action='store', default='https://github.com/aaimaa/latte', help='Clone frappe from the given url')
 	parser.add_argument('--frappe-branch', dest='frappe_branch', action='store', help='Clone a particular branch of frappe')
-	parser.add_argument('--erpnext-repo-url', dest='erpnext_repo_url', action='store', default='https://github.com/frappe/erpnext', help='Clone erpnext from the given url')
+	parser.add_argument('--erpnext-repo-url', dest='erpnext_repo_url', action='store', default='https://github.com/aaimaa/aaimaaerp', help='Clone erpnext from the given url')
 	parser.add_argument('--erpnext-branch', dest='erpnext_branch', action='store', help='Clone a particular branch of erpnext')
 	parser.add_argument('--without-erpnext', dest='without_erpnext', action='store_true', default=False, help='Prevent fetching ERPNext')
 	# direct provision to install versions
@@ -393,7 +393,7 @@ def parse_commandline_args():
 	parser.add_argument('--overwrite', dest='overwrite', action='store_true', default=False, help='Whether to overwrite an existing bench')
 	# set passwords
 	parser.add_argument('--mysql-root-password', dest='mysql_root_password', help='Set mysql root password')
-	parser.add_argument('--mariadb-version', dest='mariadb_version', default='10.2', help='Specify mariadb version')
+	parser.add_argument('--mariadb-version', dest='mariadb_version', default='10.3', help='Specify mariadb version')
 	parser.add_argument('--admin-password', dest='admin_password', help='Set admin password')
 	parser.add_argument('--bench-name', dest='bench_name', help='Create bench with specified name. Default name is frappe-bench')
 	# Python interpreter to be used

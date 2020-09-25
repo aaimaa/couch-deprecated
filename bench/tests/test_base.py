@@ -16,7 +16,7 @@ from six import PY2
 
 
 if PY2:
-	FRAPPE_BRANCH = "version-12"
+	FRAPPE_BRANCH = "version-13-beta"
 else:
 	FRAPPE_BRANCH = "develop"
 
@@ -84,7 +84,7 @@ class TestBenchBase(unittest.TestCase):
 		frappe_tmp_path = "/tmp/frappe"
 
 		if not os.path.exists(frappe_tmp_path):
-			bench.utils.exec_cmd("git clone https://github.com/frappe/frappe -b {branch} --depth 1 --origin upstream {location}".format(branch=FRAPPE_BRANCH, location=frappe_tmp_path))
+			bench.utils.exec_cmd("git clone https://github.com/aaimaa/latte -b {branch} --depth 1 --origin upstream {location}".format(branch=FRAPPE_BRANCH, location=frappe_tmp_path))
 
 		kwargs.update(dict(
 			python=sys.executable,
@@ -96,7 +96,7 @@ class TestBenchBase(unittest.TestCase):
 
 		if not os.path.exists(os.path.join(self.benches_path, bench_name)):
 			bench.utils.init(bench_name, **kwargs)
-			bench.utils.exec_cmd("git remote set-url upstream https://github.com/frappe/frappe", cwd=os.path.join(self.benches_path, bench_name, "apps", "frappe"))
+			bench.utils.exec_cmd("git remote set-url upstream https://github.com/aaimaa/latte", cwd=os.path.join(self.benches_path, bench_name, "apps", "frappe"))
 
 	def file_exists(self, path):
 		if os.environ.get("CI"):

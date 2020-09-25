@@ -1,7 +1,7 @@
 [
 	{
-		"url":"https://github.com/frappe/erpnext",
-		"name":"erpnext",
-		"branch": "master"
+		"url": "https://github.com/aaimaa/aaimaaerp",
+		"name": "erpnext",
+		"branch": "version-13-beta"
 	}
 ]
