@@ -246,7 +246,7 @@ def install_bench(args):
 
 def clone_bench_repo(args):
 	'''Clones the bench repository in the user folder'''
-	branch = args.bench_branch or 'master'
+	branch = args.bench_branch or 'aaimaa'
 	repo_url = args.repo_url or 'https://github.com/aaimaa/couch.git'
 
 	if os.path.exists(tmp_bench_repo):
@@ -385,7 +385,7 @@ def parse_commandline_args():
 	parser.add_argument('--erpnext-branch', dest='erpnext_branch', action='store', help='Clone a particular branch of erpnext')
 	parser.add_argument('--without-erpnext', dest='without_erpnext', action='store_true', default=False, help='Prevent fetching ERPNext')
 	# direct provision to install versions
-	parser.add_argument('--version', dest='version', action='store', default='12', type=int, help='Clone particular version of frappe and erpnext')
+	parser.add_argument('--version', dest='version', action='store', default='13', type=int, help='Clone particular version of frappe and erpnext')
 	# To enable testing of script using Travis, this should skip the prompt
 	parser.add_argument('--run-travis', dest='run_travis', action='store_true', default=False, help=argparse.SUPPRESS)
 	parser.add_argument('--without-bench-setup', dest='without_bench_setup', action='store_true', default=False, help=argparse.SUPPRESS)
