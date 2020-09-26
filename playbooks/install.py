@@ -246,7 +246,11 @@ def install_bench(args):
 
 def clone_bench_repo(args):
 	'''Clones the bench repository in the user folder'''
+<<<<<<< HEAD
 	branch = args.bench_branch or 'aaimaa'
+=======
+	branch = args.bench_branch or 'master'
+>>>>>>> bfaed93e43596e5b2e59f2308ffdd88e31fc2e2f
 	repo_url = args.repo_url or 'https://github.com/aaimaa/couch.git'
 
 	if os.path.exists(tmp_bench_repo):
